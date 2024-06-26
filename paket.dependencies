@@ -3,3 +3,4 @@ source https://www.nuget.org/api/v2
 nuget FSharp.Core
 nuget Fake.Core.Target ~> 6
 nuget Fake.IO.FileSystem ~> 6
+nuget Fable.Mocha ~> 2

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Build.fs" />
+  </ItemGroup>
+
+  <!-- Add source files to "fable" folder in Nuget package -->
+  <ItemGroup>
+      <!-- Include all files that are compiled with this project -->
+      <Content Include="@(Compile)" Pack="true" PackagePath="fable/%(RelativeDir)%(Filename)%(Extension)" />
+      <!-- Include the project file itself as well -->
+      <Content Include="$(MSBuildThisFileFullPath)" Pack="true" PackagePath="fable/" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- Ensure debugging information is easily found, so that editors can locate the source code locations for your library.
+          This slightly increases the size of your package, but the usability benefits are worth it. -->
+    <DebugType>embedded</DebugType>
+    <!-- Ensure that files that are generated during the build by the .NET SDK are also included in your compiled library. -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTags>fable;fable-binding;fable-javascript</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NpmDependencies>
+        <NpmPackage Name="@tensorflow/tfjs" Version="gt 4.20.0 lt 5.0.0" ResolutionStrategy="Max" />
+        <NpmPackage Name="@tensorflow/tfjs-backend-wasm" Version="gt 4.20.0 lt 5.0.0" ResolutionStrategy="Max" />
+    </NpmDependencies>
+  </PropertyGroup>
+
+  <Import Project=".paket\Paket.Restore.targets" />
+</Project>

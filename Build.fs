@@ -9,7 +9,6 @@ open Fake.Core.TargetOperators
 [<Literal>]
 let here = __SOURCE_DIRECTORY__
 
-
 let initializeContext () =
     let execContext = Context.FakeExecutionContext.Create false "build.fsx" []
     Context.setExecutionContext (Context.RuntimeContext.Fake execContext)
@@ -29,14 +28,16 @@ Target.create "Clean" (fun _ -> !! "src/**/bin" ++ "src/**/obj" |> Shell.cleanDi
 Target.create "Build" (fun _ ->
     dotnet [ "build" ]  (here </> "fable")
 )
+Target.create "Test" (fun _ ->
+    dotnet [ "fable"; "watch"; "-o"; "output"; "-s"; "--run"; "npx"; "vite" ] "fable/tests")
 
-Target.create "All" ignore
+Target.create "Format" (fun _ -> dotnet [ "fantomas"; "." ] ".")
 
 let deps = [
-    "Clean" ==> "Build" ==> "All"
+    "Clean" ==> "Build" ==> "Test"
 ]
 
 [<EntryPoint>]
 let main args =
-    Target.runOrDefault "All"
+    Target.runOrDefault "Test"
     0

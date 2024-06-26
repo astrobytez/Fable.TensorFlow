@@ -13,6 +13,18 @@
       "commands": [
         "paket"
       ]
+    },
+    "fantomas": {
+      "version": "6.3.9",
+      "commands": [
+        "fantomas"
+      ]
+    },
+    "fable": {
+      "version": "4.19.3",
+      "commands": [
+        "fable"
+      ]
     }
   }
 }
