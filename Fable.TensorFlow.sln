@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fable", "fable", "{B85D5D74
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "tests", "fable\tests\tests.fsproj", "{6DFD3174-73CB-48C1-A968-BB8ED185F79A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Fable.TensorFlow", "fable\src\Fable.TensorFlow.fsproj", "{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,8 +48,21 @@ Global
 		{6DFD3174-73CB-48C1-A968-BB8ED185F79A}.Release|x64.Build.0 = Release|Any CPU
 		{6DFD3174-73CB-48C1-A968-BB8ED185F79A}.Release|x86.ActiveCfg = Release|Any CPU
 		{6DFD3174-73CB-48C1-A968-BB8ED185F79A}.Release|x86.Build.0 = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|x64.Build.0 = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Debug|x86.Build.0 = Debug|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|x64.ActiveCfg = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|x64.Build.0 = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|x86.ActiveCfg = Release|Any CPU
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6DFD3174-73CB-48C1-A968-BB8ED185F79A} = {B85D5D74-0535-420D-A581-9C4097B02889}
+		{95BBA6F9-EF7D-493A-9D8D-6F1586C54045} = {B85D5D74-0535-420D-A581-9C4097B02889}
 	EndGlobalSection
 EndGlobal
